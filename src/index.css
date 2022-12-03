@@ -1,0 +1,74 @@
+/* Global variables */
+
+:root {
+  --text-primary: #231042;
+  --text-secondary: #4cfbfb;
+  --text-dark: #25222b;
+  --text-light: #eaeaea;
+
+  --bg-primary: #25144c;
+  --bg-secondary: #dff5ee;
+  --bg-dark: #191042;
+}
+
+/* Restart default properties */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Bootstrap Customization */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #2bb686;
+  border-color: #2bb686;
+}
+.text-primary {
+  color: #231042 !important;
+}
+
+.text-secondary {
+  color: #4cfbfb !important;
+}
+
+.text-light {
+  color: #eaeaea !important;
+}
+
+.text-dark {
+  color: #25222b !important;
+}
+
+.bg-primary {
+  background-color: #25144c !important;
+}
+
+.bg-secondary {
+  background-color: #dff5ee !important;
+}
+
+.bg-dark {
+  background-color: #191042 !important;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}

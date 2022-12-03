@@ -1,0 +1,52 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.nav img {
+  width: auto;
+  height: 3.75rem;
+}
+
+.menuIcon {
+  display: none;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  display: flex;
+}
+
+.nav a:hover {
+  color: lightgreen;
+}
+
+@media (max-width: 768px) {
+  .nav img {
+    height: 2.8rem;
+  }
+
+  .dropdownMenu {
+    display: none;
+  }
+  /* Hamburger menu */
+  .menuIcon {
+    display: block;
+  }
+  /* Hamburger container */
+  .menuIconContainer {
+    position: relative;
+  }
+
+  .displayMobileMenu {
+    display: block;
+    width: 100%;
+
+    position: fixed;
+    top: 4.8rem;
+    left: 0;
+
+    background-color: lightcoral;
+  }
+}
