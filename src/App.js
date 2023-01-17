@@ -1,5 +1,3 @@
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
 import { Page404 } from "./pages/Page404";
 import { Route, Routes } from "react-router-dom";
 import { Favorites } from "./pages/Favorites";
@@ -15,11 +13,12 @@ function App() {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/category/:categoryType" element={<NewsCategory />} />
         {/* the * means go throught the end of the url  */}
-        <Route path="/news/:newsId*" element={<NewsDetails />} />
+        <Route path="/news/:id*" element={<NewsDetails />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
   );
 }
+// encodeURIComponent;
 
 export default App;

@@ -1,26 +1,32 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
 import { getIndividualNewsEndpoint } from "../api/endpoints";
 import { useAxios } from "../utils/hooks/useAxios";
 import { Layout } from "../components/Layout";
+import { adaptIndiviualNewsData } from "../api/adapters";
 
 export const NewsDetails = () => {
-  const { newsId } = useParams();
-  const dataFromNews = getIndividualNewsEndpoint(
-    "sport/2022/oct/07/cricket-jos-buttler-primed-for-england-comeback-while-phil-salt-stays-focused"
-  );
-  const data = useAxios(dataFromNews);
+  // const { newsId } = useParams();
+  const params = useParams();
 
-  console.log(newsId);
-  console.log(dataFromNews);
-  console.log(data);
+  const newsIdTemporarly = `${params.id}/${params["*"]}`;
+  console.log(newsIdTemporarly);
+
+  const singularNewsUrl = getIndividualNewsEndpoint(newsIdTemporarly);
+  const adaptedData = adaptIndiviualNewsData(useAxios(singularNewsUrl));
+
+  console.log(singularNewsUrl);
+  console.log(adaptedData);
 
   return (
     <Layout>
       <Container>
-        <h1>Titlul știrii</h1>
-        <p>Parametrul venit din rută: {newsId}</p>
+        <h1>{adaptedData.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: adaptedData.image }}></div>
+        <p>{adaptedData.description}</p>
+        <p>{adaptedData.author}</p>
+        {/* <p>{adaptedData.formattedDate}</p> */}
       </Container>
     </Layout>
   );

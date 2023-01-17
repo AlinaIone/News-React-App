@@ -4,18 +4,27 @@ import Container from "react-bootstrap/esm/Container";
 import { getNewsCategoriesEndpoint } from "../api/endpoints";
 import { useAxios } from "../utils/hooks/useAxios";
 import { Layout } from "../components/Layout";
+import { NewsCardList } from "../components/NewsCardList";
+import { adaptNewsData } from "../api/adapters";
 
 export const NewsCategory = () => {
+  // get the tyoe of the category
   const { categoryType } = useParams();
-  const dataFromCategory = getNewsCategoriesEndpoint(categoryType, 1, 20);
-  const news = useAxios(dataFromCategory);
+  // create the url/endpoint for the api
+  const newsCategoryUrl = getNewsCategoriesEndpoint(categoryType, 1, 30);
+  // call the API with the url created above
+  const news = useAxios(newsCategoryUrl);
+  // Adapt the data recived from the call to a format needed
+  const techNewsList = adaptNewsData(news);
 
+  console.log(categoryType);
   console.log(news);
+
   return (
     <Layout>
       <Container>
-        <h1>Numele categoriei</h1>
-        <p>Parametrul venit din rută: {categoryType}</p>
+        <h3>{categoryType}</h3>
+        <NewsCardList newsList={techNewsList} />
       </Container>
     </Layout>
   );

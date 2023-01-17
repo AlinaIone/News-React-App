@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const useAxios = (url) => {
+  // data state from API response
   const [data, setData] = useState(null);
 
   useEffect(() => {

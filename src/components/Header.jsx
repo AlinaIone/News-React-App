@@ -15,7 +15,7 @@ export const Header = () => {
 
   return (
     <header>
-      <nav className={`${styles.nav} bg-primary w-100`}>
+      <nav className={`${styles.nav} w-100`}>
         <Container className="d-flex justify-content-between align-items-center">
           <NavLink to="/" className="p-3">
             <img
