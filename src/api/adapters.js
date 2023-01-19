@@ -1,11 +1,11 @@
-// Get only the info needed
+// Get only the info needed for each of the news displyed
 export const adaptNewsData = (apiData) => {
   if (!apiData || !apiData.response) {
     return [];
   }
   const adaptedResponse = apiData.response.results;
 
-  const adaptedNewsData = adaptedResponse.map((eachNews) => {
+  return adaptedResponse.map((eachNews) => {
     return {
       id: eachNews.id,
       thumbnail: eachNews.fields.thumbnail,
@@ -13,9 +13,10 @@ export const adaptNewsData = (apiData) => {
       title: eachNews.fields.headline,
     };
   });
-  return adaptedNewsData;
+  // return adaptedNewsData;
 };
 
+//  Get only the info needed for a specific news
 export const adaptIndiviualNewsData = (apiData) => {
   if (!apiData || !apiData.response) {
     return {};
@@ -24,6 +25,7 @@ export const adaptIndiviualNewsData = (apiData) => {
   const adaptedResponse = apiData.response.content;
 
   const adaptedDetailsNews = {
+    id: adaptedResponse.id,
     date: adaptedResponse.webPublicationDate,
     title: adaptedResponse.fields.headline,
     description: adaptedResponse.fields.trailText,

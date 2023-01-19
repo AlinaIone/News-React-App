@@ -6,20 +6,21 @@ import Col from "react-bootstrap/Col";
 
 export const NewsCardList = (props) => {
   const { newsList } = props;
-  console.log(newsList);
+  console.log(newsList.description);
 
   return (
     <div>
       <Container>
         <Row>
-          {newsList?.map((news) => {
+          {newsList.map((news) => {
             return (
-              <Col xs={12} md={4} key={news.id}>
+              <Col xs={12} md={4} className="mb-4" key={news.id}>
                 <NewsCard
                   id={news.id}
                   imageSrc={news.thumbnail}
                   content={news.content}
                   title={news.title}
+                  description={news.description}
                 />
               </Col>
             );
