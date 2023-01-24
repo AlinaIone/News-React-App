@@ -3,7 +3,7 @@ export const addToFavorites = (payload) => ({
   payload,
 });
 
-export const removeFromFavprotes = (newsId) => ({
+export const removeFromFavorites = (newsId) => ({
   type: "REMOVE_FROM_FAV",
   payload: newsId,
 });

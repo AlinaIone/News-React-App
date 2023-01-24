@@ -9,11 +9,10 @@ export const adaptNewsData = (apiData) => {
     return {
       id: eachNews.id,
       thumbnail: eachNews.fields.thumbnail,
-      content: eachNews.fields.trailText,
+      description: eachNews.fields.trailText,
       title: eachNews.fields.headline,
     };
   });
-  // return adaptedNewsData;
 };
 
 //  Get only the info needed for a specific news

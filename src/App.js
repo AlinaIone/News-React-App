@@ -9,10 +9,7 @@ import { initialState, favoritesReducer } from "./store/Favorites/reducer";
 import { FavoritesContext } from "./store/Favorites/context";
 
 function App() {
-  const [stateFavorites, dispatchFavorites] = useReducer(
-    favoritesReducer,
-    initialState
-  );
+  const [stateFavorites, dispatchFavorites] = useReducer(favoritesReducer, initialState);
 
   return (
     <div className="App">
@@ -29,6 +26,4 @@ function App() {
     </div>
   );
 }
-// encodeURIComponent;
-
 export default App;

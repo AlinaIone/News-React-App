@@ -16,22 +16,18 @@ export const NewsCategory = () => {
   const pageNumber = searchParams.get("page");
 
   // create the url/endpoint for the api
-  const newsCategoryUrl = getNewsCategoriesEndpoint(
-    categoryType,
-    pageNumber || 1,
-    30
-  );
+  const newsCategoryUrl = getNewsCategoriesEndpoint(categoryType, pageNumber || 1);
 
   // call the API with the url created above
   const news = useAxios(newsCategoryUrl);
   // Adapt the data recived from the call to a format needed
-  const techNewsList = adaptNewsData(news);
+  const newsList = adaptNewsData(news);
 
   return (
     <Layout>
       <Container>
         <h3>{categoryType.charAt(0).toUpperCase() + categoryType.slice(1)}</h3>
-        <NewsCardList newsList={techNewsList} />
+        <NewsCardList newsList={newsList} />
         <NewsPagination category={categoryType} pageNumber={pageNumber} />
       </Container>
     </Layout>

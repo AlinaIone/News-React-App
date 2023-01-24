@@ -8,10 +8,9 @@ import { FavoritesContext } from "../store/Favorites/context";
 
 // TODO
 export const Favorites = () => {
-  const { stateFavorites, dispatchFavorites } = useContext(FavoritesContext);
-  console.log(stateFavorites.favorites[0].description);
+  const { stateFavorites } = useContext(FavoritesContext);
+  // console.log(stateFavorites.favorites);
 
-  // TOdo de ce nu apare description
   return (
     <Layout>
       <Container>

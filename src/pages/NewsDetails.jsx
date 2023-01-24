@@ -8,28 +8,31 @@ import { adaptIndiviualNewsData } from "../api/adapters";
 import { Button, Col, Row } from "react-bootstrap";
 import { getDateFormatted } from "../utils/hooks/date";
 import styles from "./NewsDetails.module.css";
-import { addToFavorites } from "../store/Favorites/actions";
+import { addToFavorites, removeFromFavorites} from "../store/Favorites/actions";
 import { FavoritesContext } from "../store/Favorites/context";
 
 export const NewsDetails = () => {
   // const { newsId } = useParams();
-  const { dispatchFavorites } = useContext(FavoritesContext);
+  const { stateFavorites, dispatchFavorites } = useContext(FavoritesContext);
   const params = useParams();
 
   const newsIdTemporarly = `${params.id}/${params["*"]}`;
   console.log(newsIdTemporarly);
 
   const singularNewsUrl = getIndividualNewsEndpoint(newsIdTemporarly);
-
   const adaptedData = adaptIndiviualNewsData(useAxios(singularNewsUrl));
-  const { id, title, description, image, author, date, content, thumbnail } =
-    adaptedData;
-
+  const {id, title, description, image, author, date, content, thumbnail, isToFavorites } = adaptedData;
   const formattedDate = getDateFormatted(date);
 
   console.log({ singularNewsUrl });
   console.log({ adaptedData });
   console.log({ formattedDate });
+
+  // Verify if the id is in the Favorites general state. If the ID is we display a REMOVE BUTTON and if is not a ADD BUTTON
+  let isFav = false;
+  if (stateFavorites.favorites.find((news) => news.id === id)) {
+    isFav = true;
+  }
 
   return (
     <Layout>
@@ -47,25 +50,41 @@ export const NewsDetails = () => {
                 <p>{author}</p>
                 <p className="mb-0"> {formattedDate}</p>
               </div>
-              <Button
-                onClick={() => {
-                  const actionResult = addToFavorites({
-                    id,
-                    title,
-                    description,
-                    thumbnail,
-                  });
-                  console.log({ description });
-                  dispatchFavorites(actionResult);
-                }}
-              >
-                Adds to Favorites
-              </Button>
+
+              {isFav ? (
+                <Button
+                  onClick={() => {
+                    const actionResult = removeFromFavorites(id);
+                    // onClick={() => {
+                    //   const actionResult = removeFromFavorites({
+                    //     id,
+                    //     isToFavorites,
+                    //   });
+                    dispatchFavorites(actionResult);
+                  }}
+                >
+                  Remove from Favorites
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => {
+                    const actionResult = addToFavorites({
+                      id,
+                      title,
+                      description,
+                      thumbnail,
+                      // isToFavorites: true,
+                    });
+                    dispatchFavorites(actionResult);
+                  }}
+                >
+                  Adds to Favorites
+                </Button>
+              )}
             </div>
             <div dangerouslySetInnerHTML={{ __html: content }}></div>
           </Col>
         </Row>
-        {/* <p>{adaptedData.formattedDate}</p> */}
       </Container>
     </Layout>
   );

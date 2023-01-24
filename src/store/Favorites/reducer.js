@@ -4,10 +4,15 @@ export const initialState = {
 
 export const favoritesReducer = (state, action) => {
   switch (action.type) {
-    // look over the initialState to see if the news is already added
+    // get the favorites array and map to get an array of ids, after look into the initialState(always the old one) to see if the news is already added
     // if is do nothing and return state, else add the news to the state and return new state
     case "ADD_TO_FAV": {
-      return state.favorites.includes(action.payload.id)
+      console.log("Add");
+      console.log({ state1: state });
+      //
+      return state.favorites
+        .map((payload) => payload.id)
+        .includes(action.payload.id)
         ? state
         : {
             favorites: [action.payload, ...state.favorites],
@@ -15,8 +20,22 @@ export const favoritesReducer = (state, action) => {
     }
     // search for the specific news(news id) and delete it then return the state without this id
     case "REMOVE_FROM_FAV": {
+      // const modifiedNewsFavPropr = state.favorites.map((news) => {
+      //   if (news.id === action.payload.id) {
+      //     action.payload.isToFavorites = false;
+      //   }
+      //   return news;
+      // });
+      // const remainingNews = modifiedNewsFavPropr.filter(
+      //   (news) => news.id !== action.payload.id
+      // );
+
+      const remainingNews = state.favorites.filter(
+        (news) => news.id !== action.payload
+      );
+      
       return {
-        favorites: state.favorites.filter((news) => news.id !== action.payload),
+        favorites: remainingNews,
       };
     }
 

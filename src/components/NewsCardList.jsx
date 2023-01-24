@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 
 export const NewsCardList = (props) => {
   const { newsList } = props;
-  console.log(newsList.description);
+  console.log({ newsList });
 
   return (
     <div>
@@ -17,24 +17,15 @@ export const NewsCardList = (props) => {
               <Col xs={12} md={4} className="mb-4" key={news.id}>
                 <NewsCard
                   id={news.id}
-                  imageSrc={news.thumbnail}
+                  thumbnail={news.thumbnail}
                   content={news.content}
                   title={news.title}
                   description={news.description}
+                  // isToFavorites={news.isToFavorites || false}
                 />
               </Col>
             );
           })}
-
-          {/* <Col xs={12} md={4}>
-            <NewsCard
-              imageSrc={
-                "https://media.guim.co.uk/4aea7d84beb29190c44b3def33e002974d527719/0_182_5472_3283/500.jpg"
-              }
-              content={"blaa blaaaaaa vlaaaaaaaa"}
-              title={"blaaaaaaaa"}
-            />
-          </Col> */}
         </Row>
       </Container>
     </div>
