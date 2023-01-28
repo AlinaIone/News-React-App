@@ -8,38 +8,39 @@ import { adaptIndiviualNewsData } from "../api/adapters";
 import { Button, Col, Row } from "react-bootstrap";
 import { getDateFormatted } from "../utils/hooks/date";
 import styles from "./NewsDetails.module.css";
-import { addToFavorites, removeFromFavorites} from "../store/Favorites/actions";
-import { FavoritesContext } from "../store/Favorites/context";
+import { FavoritesButton } from "../components/FavoritesButton";
+import { AlertContext } from "../store/Alert/alertContext";
+import Alert from 'react-bootstrap/Alert';
 
 export const NewsDetails = () => {
   // const { newsId } = useParams();
-  const { stateFavorites, dispatchFavorites } = useContext(FavoritesContext);
+  const { stateAlert, } = useContext(AlertContext);
   const params = useParams();
 
+  // a temporary way to get the news id until I will find an escape character who can read an entire id  ex:'music/2023/jan/28/john-wilson-sinfonia-of-london-vaughan-williams-howells-delius-elgar-review-eliane-radigue-occam-delta-xv-quatuor-bozzini'
+  // using useParams hook I get only the first word from the id ex: music
   const newsIdTemporarly = `${params.id}/${params["*"]}`;
   console.log(newsIdTemporarly);
 
   const singularNewsUrl = getIndividualNewsEndpoint(newsIdTemporarly);
   const adaptedData = adaptIndiviualNewsData(useAxios(singularNewsUrl));
-  const {id, title, description, image, author, date, content, thumbnail, isToFavorites } = adaptedData;
+  const { id, title, description, image, author, date, content, thumbnail, isToFavorites } = adaptedData;
   const formattedDate = getDateFormatted(date);
 
-  console.log({ singularNewsUrl });
-  console.log({ adaptedData });
-  console.log({ formattedDate });
+  // console.log({ singularNewsUrl });
+  // console.log({ adaptedData });
+  // console.log({ formattedDate });
 
-  // Verify if the id is in the Favorites general state. If the ID is we display a REMOVE BUTTON and if is not a ADD BUTTON
-  let isFav = false;
-  if (stateFavorites.favorites.find((news) => news.id === id)) {
-    isFav = true;
-  }
 
   return (
     <Layout>
       <Container className={`${styles.newsDetails} my-5 `}>
         <Row className="d-flex justify-content-center">
-          <Col xs={12} lg={8}>
-            <h1 className="pt-3 mb-5">{adaptedData.title}</h1>
+          {stateAlert.isActive && <Alert key={alert} variant='success' className={styles.alert}>
+            News added to Favorites
+          </Alert>}
+          <Col xs={12} lg={8} key={id}>
+            <h1 className="pt-3 mb-5">{title}</h1>
             <p className="fw-bold">{description}</p>
             <div
               className="mb-4"
@@ -50,37 +51,7 @@ export const NewsDetails = () => {
                 <p>{author}</p>
                 <p className="mb-0"> {formattedDate}</p>
               </div>
-
-              {isFav ? (
-                <Button
-                  onClick={() => {
-                    const actionResult = removeFromFavorites(id);
-                    // onClick={() => {
-                    //   const actionResult = removeFromFavorites({
-                    //     id,
-                    //     isToFavorites,
-                    //   });
-                    dispatchFavorites(actionResult);
-                  }}
-                >
-                  Remove from Favorites
-                </Button>
-              ) : (
-                <Button
-                  onClick={() => {
-                    const actionResult = addToFavorites({
-                      id,
-                      title,
-                      description,
-                      thumbnail,
-                      // isToFavorites: true,
-                    });
-                    dispatchFavorites(actionResult);
-                  }}
-                >
-                  Adds to Favorites
-                </Button>
-              )}
+              <FavoritesButton newsDataToDispatch={adaptedData} />
             </div>
             <div dangerouslySetInnerHTML={{ __html: content }}></div>
           </Col>
