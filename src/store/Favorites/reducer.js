@@ -15,27 +15,13 @@ export const favoritesReducer = (state, action) => {
         .includes(action.payload.id)
         ? state
         : {
-            favorites: [action.payload, ...state.favorites],
-          };
+          favorites: [action.payload, ...state.favorites],
+        };
     }
     // search for the specific news(news id) and delete it then return the state without this id
     case "REMOVE_FROM_FAV": {
-      // const modifiedNewsFavPropr = state.favorites.map((news) => {
-      //   if (news.id === action.payload.id) {
-      //     action.payload.isToFavorites = false;
-      //   }
-      //   return news;
-      // });
-      // const remainingNews = modifiedNewsFavPropr.filter(
-      //   (news) => news.id !== action.payload.id
-      // );
-
-      const remainingNews = state.favorites.filter(
-        (news) => news.id !== action.payload
-      );
-      
       return {
-        favorites: remainingNews,
+        favorites: state.favorites.filter((news) => news.id !== action.payload),
       };
     }
 

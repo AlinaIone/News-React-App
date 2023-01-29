@@ -9,7 +9,6 @@ import { FavoritesContext } from "../store/Favorites/context";
 // TODO
 export const Favorites = () => {
   const { stateFavorites } = useContext(FavoritesContext);
-  // console.log(stateFavorites.favorites);
 
   return (
     <Layout>
