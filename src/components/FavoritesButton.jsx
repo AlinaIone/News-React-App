@@ -6,6 +6,11 @@ import { addToFavorites, removeFromFavorites } from "../store/Favorites/actions"
 import { AlertContext } from "../store/Alert/alertContext";
 import { isAlertActive } from "../store/Alert/alertActions";
 import useLocalStorage from "../utils/hooks/useLocalStorage";
+import styles from './FavoritesButton.module.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
+const star = <FontAwesomeIcon icon={faStar} size='2x' />
 
 export const FavoritesButton = ({ newsDataToDispatch }) => {
     const { stateFavorites, dispatchFavorites } = useContext(FavoritesContext);
@@ -25,18 +30,18 @@ export const FavoritesButton = ({ newsDataToDispatch }) => {
     }
 
     return (
-        <div>
+
+        <div className={styles.buttons}>
+
             {isFav ? (
-                <Button
+                <Button className={styles['btn-removeFav']}
                     onClick={() => {
                         const actionResult = removeFromFavorites(id);
                         dispatchFavorites(actionResult);
                     }}
-                >
-                    Remove from Favorites
-                </Button>
+                >{star}</Button>
             ) : (
-                <Button
+                <Button className={styles['btn-addFav']}
                     onClick={() => {
                         dispatchAlert(isAlertActive(true));
                         setTimeout(() => {
@@ -51,7 +56,7 @@ export const FavoritesButton = ({ newsDataToDispatch }) => {
                         dispatchFavorites(actionResult);
                     }}
                 >
-                    Adds to Favorites
+                    {star}
                 </Button>
             )}
         </div>

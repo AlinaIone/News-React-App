@@ -3,23 +3,26 @@ import Container from "react-bootstrap/esm/Container";
 import { Link, NavLink } from "react-router-dom";
 import { Home } from "../pages/Home";
 import styles from "./Header.module.css";
+import logo from '../logo/News-Logo.png'
 
 export const Header = () => {
   const [isShowed, setIsShowed] = useState(false);
 
-  let dropdownMenuClasses = styles.dropdownMenu;
+  let dropdownMenuClasses = isShowed
+    ? styles.displayMobileMenu
+    : styles.dropdownMenu;
 
-  if (isShowed) {
-    dropdownMenuClasses += `${styles.displayMobileMenu}`;
-  }
+  // if (isShowed) {
+  //   dropdownMenuClasses += styles.displayMobileMenu;
+  // }
 
   return (
-    <header>
+    <header className={styles.header}>
       <nav className={`${styles.nav} w-100`}>
         <Container className="d-flex justify-content-between align-items-center">
-          <NavLink to="/" className="p-3">
+          <NavLink to="/" className="p-3 py-0">
             <img
-              src="https://itschool.ro/images/logo-itschool-dark.svg"
+              src={logo}
               alt="itschool logo"
             />
           </NavLink>

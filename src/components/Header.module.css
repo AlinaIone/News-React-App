@@ -1,13 +1,15 @@
-.nav {
+.header {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1;
+  display: block;
   background-color: var(--bg-primary);
 }
 
 .nav img {
+  max-width: 6rem;
   width: auto;
-  height: 3.75rem;
+  height: auto;
 }
 
 .menuIcon {
@@ -26,6 +28,9 @@
 @media (max-width: 768px) {
   .nav img {
     height: 2.8rem;
+  }
+  .nav a {
+    display: block;
   }
 
   .dropdownMenu {

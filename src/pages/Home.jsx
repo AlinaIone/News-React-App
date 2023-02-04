@@ -6,6 +6,7 @@ import { getNewsCategoriesEndpoint } from "../api/endpoints";
 import { Layout } from "../components/Layout";
 import { NewsCardList } from "../components/NewsCardList";
 import { useAxios } from "../utils/hooks/useAxios";
+import styles from "./Home.module.css";
 
 export const Home = () => {
   // Create the endoint
@@ -29,59 +30,42 @@ export const Home = () => {
     <Layout>
       <section className="tech my-5">
         <Container>
-          <h1 className="mb-5 pt-3">Tech</h1>
+          <h1 className="mb-4 pt-3">Tech</h1>
           <NewsCardList newsList={techNewsList} />
-          <p>
-            See all the tech news in the section
-            <Link to="/category/technology" className="text-secondary">
-              Tech
-            </Link>
-            .
-          </p>
+          <Link to="/category/technology" className={`text-secondary ${styles.moreNews}`}>
+            <span> See all the TECH news.</span>
+          </Link>
+          <hr />
         </Container>
       </section>
 
       <section className="music my-5">
         <Container>
-          <h1 className="mb-5 pt-3">Music</h1>
+          <h1 className="mb-4 pt-3">Music</h1>
           <NewsCardList newsList={musicNewsList} />
-          <p>
-            See all the music news in the section
-            <Link to="/category/music" className="text-secondary">
-              Music
-            </Link>
-            .
-          </p>
+
+          <Link to="/category/music" className={`text-secondary ${styles.moreNews}`}>
+            <span> See all the MUSIC news.</span>
+          </Link>
+          <hr />
         </Container>
       </section>
 
       <section className="sience my-5">
         <Container>
-          <h1 className="mb-5 pt-3">Sience</h1>
+          <h1 className="mb-4 pt-3">Sience</h1>
           <NewsCardList newsList={scienceNewsList} />
-          <p>
-            See all the science news in the section
-            <Link to="/category/science" className="text-secondary">
-              Science
-            </Link>
-            .
-          </p>
+          <Link to="/category/science" className={`text-secondary ${styles.moreNews}`}>
+            <span> See all the SCIENCE news.</span>
+          </Link>
         </Container>
       </section>
 
       <section className="favorites my-5">
         <Container>
-          <h1 className="mb-5 pt-3">Favorites</h1>
-          <p>Do you want to save your favorites news for later?</p>
-          <p>Find the button on each news. </p>
-          <p className="pb-3">
-            Go to the{" "}
-            <Link to="/favorites" className="text-secodary">
-              {" "}
-              Favorites
-            </Link>
-            to find your added news.
-          </p>
+          <Link to="/favorites" className={`text-secondary ${styles.moreNews}`}>
+            <span> {`>>  Go to the FAVORITES to find your added news <<`}</span>
+          </Link>
         </Container>
       </section>
     </Layout>

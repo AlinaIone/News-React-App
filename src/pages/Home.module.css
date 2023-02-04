@@ -1,0 +1,4 @@
+.moreNews span:hover {
+  border-bottom: 2px solid var(--text-light);
+  color: var(--text-dark);
+}

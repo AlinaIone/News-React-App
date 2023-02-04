@@ -8,11 +8,9 @@ export const useAxios = (url) => {
   useEffect(() => {
     const getDataFromApi = async () => {
       const apiResponse = await axios.get(url);
-      console.log(apiResponse.data);
       setData(apiResponse.data);
     };
     getDataFromApi();
   }, [url]);
-
   return data;
 };

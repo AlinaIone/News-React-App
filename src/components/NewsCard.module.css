@@ -1,0 +1,16 @@
+.cardContainer {
+  position: relative;
+}
+
+.cardHeader {
+  padding-left: 0.7rem !important;
+  padding-right: 0.7rem !important;
+}
+
+a {
+  color: var(--text-primary) !important;
+}
+
+a:hover {
+  color: var(--text-secondary) !important;
+}

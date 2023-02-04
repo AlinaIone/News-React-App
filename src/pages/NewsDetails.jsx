@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
 import { getIndividualNewsEndpoint } from "../api/endpoints";
 import { useAxios } from "../utils/hooks/useAxios";
 import { Layout } from "../components/Layout";
 import { adaptIndiviualNewsData } from "../api/adapters";
-import { Button, Col, Row } from "react-bootstrap";
-import { getDateFormatted } from "../utils/hooks/date";
+import { Col, Row } from "react-bootstrap";
+import { getDateFormatted } from "../utils/date";
 import styles from "./NewsDetails.module.css";
 import { FavoritesButton } from "../components/FavoritesButton";
 import { AlertContext } from "../store/Alert/alertContext";
@@ -24,18 +24,14 @@ export const NewsDetails = () => {
 
   const singularNewsUrl = getIndividualNewsEndpoint(newsIdTemporarly);
   const adaptedData = adaptIndiviualNewsData(useAxios(singularNewsUrl));
-  const { id, title, description, image, author, date, content, thumbnail, isToFavorites } = adaptedData;
+  const { id, title, description, image, author, date, content, thumbnail, } = adaptedData;
   const formattedDate = getDateFormatted(date);
-
-  // console.log({ singularNewsUrl });
-  // console.log({ adaptedData });
-  // console.log({ formattedDate });
 
 
   return (
     <Layout>
-      <Container className={`${styles.newsDetails} my-5 `}>
-        <Row className="d-flex justify-content-center">
+      <Container className={`${styles.newsDetailsContainer} my-5 `}>
+        <Row className="d-flex justify-content-center align-item-center">
           {stateAlert.isActive && <Alert key={alert} variant='success' className={styles.alert}>
             News added to Favorites
           </Alert>}
@@ -46,7 +42,7 @@ export const NewsDetails = () => {
               className="mb-4"
               dangerouslySetInnerHTML={{ __html: image }}
             ></div>
-            <div className="d-flex justify-content-between align-item-center mb-4">
+            <div className="d-flex justify-content-between align-item-center mb-4 position-relative">
               <div className="fw-bold">
                 <p>{author}</p>
                 <p className="mb-0"> {formattedDate}</p>
