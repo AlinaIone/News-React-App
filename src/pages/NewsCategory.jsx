@@ -30,7 +30,7 @@ export const NewsCategory = () => {
   return (
     <Layout>
       <Container>
-        <h3>{categoryType.charAt(0).toUpperCase() + categoryType.slice(1)}</h3>
+        <h2 className="my-4">{categoryType.charAt(0).toUpperCase() + categoryType.slice(1)}</h2>
         {stateAlert.isActive && <Alert key={alert} variant='success' className={styles.alert}>
           News added to Favorites
         </Alert>}

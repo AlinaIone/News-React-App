@@ -28,9 +28,9 @@ export const Home = () => {
 
   return (
     <Layout>
-      <section className="tech my-5">
+      <section className="tech">
         <Container>
-          <h1 className="mb-4 pt-3">Tech</h1>
+          <h1 className="my-4">Tech</h1>
           <NewsCardList newsList={techNewsList} />
           <Link to="/category/technology" className={`text-secondary ${styles.moreNews}`}>
             <span> See all the TECH news.</span>
@@ -39,9 +39,9 @@ export const Home = () => {
         </Container>
       </section>
 
-      <section className="music my-5">
+      <section className="music">
         <Container>
-          <h1 className="mb-4 pt-3">Music</h1>
+          <h1 className="my-4">Music</h1>
           <NewsCardList newsList={musicNewsList} />
 
           <Link to="/category/music" className={`text-secondary ${styles.moreNews}`}>
@@ -51,9 +51,9 @@ export const Home = () => {
         </Container>
       </section>
 
-      <section className="sience my-5">
+      <section className="sience">
         <Container>
-          <h1 className="mb-4 pt-3">Sience</h1>
+          <h1 className="my-4">Sience</h1>
           <NewsCardList newsList={scienceNewsList} />
           <Link to="/category/science" className={`text-secondary ${styles.moreNews}`}>
             <span> See all the SCIENCE news.</span>
@@ -61,7 +61,7 @@ export const Home = () => {
         </Container>
       </section>
 
-      <section className="favorites my-5">
+      <section className="my-4">
         <Container>
           <Link to="/favorites" className={`text-secondary ${styles.moreNews}`}>
             <span> {`>>  Go to the FAVORITES to find your added news <<`}</span>

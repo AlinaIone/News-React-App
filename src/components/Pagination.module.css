@@ -3,10 +3,10 @@
 }
 
 .pagination a:hover {
-  color: var(--text-secondary);
+  background-color: #6fffe951;
 }
 
 span#paginationActive {
-  background-color: var(--bg-dark);
-  border-color: var(--bg-primary);
+  background-color: var(--bg-primary);
+  border: var(--bg-light) 1px solid;
 }

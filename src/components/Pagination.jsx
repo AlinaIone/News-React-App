@@ -2,13 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
 import styles from "./Pagination.module.css";
+
+
 export const NewsPagination = (props) => {
   const { category, pageNumber, total } = props;
   const navigate = useNavigate();
   // console.log(navigate);
 
   let items = [];
-  let totalPages = 5;
+  let totalPages = 6;
   let midpoint = totalPages / 2;
 
   pageNumber > 1 &&
@@ -36,7 +38,7 @@ export const NewsPagination = (props) => {
     );
   }
 
-  pageNumber < 10 &&
+  pageNumber < 6 &&
     items.push(
       <Pagination.Next
         key="next"
@@ -50,7 +52,7 @@ export const NewsPagination = (props) => {
 
   return (
     <div className="d-flex justify-content-center align-item-center mt-3 mb-4">
-      <Pagination className={styles.pagination} size="lg">
+      <Pagination className={styles.pagination} size="md">
         {items}
       </Pagination>
     </div>

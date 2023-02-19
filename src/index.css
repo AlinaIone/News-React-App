@@ -1,5 +1,4 @@
 /* Global variables */
-
 :root {
   --text-primary: #3a506b;
   --text-secondary: #5bc0be;
@@ -21,7 +20,6 @@
 
 body {
   margin: 0;
-  /* font-family: "PT Serif", serif; */
   font-family: "Merriweather Sans", sans-serif;
 }
 
@@ -39,12 +37,6 @@ a {
 /* Bootstrap Customization */
 .btn-secondary {
   background-color: var(--bg-secondary) !important;
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-  background-color: #2bb686;
-  border-color: #2bb686;
 }
 
 .text-primary {
