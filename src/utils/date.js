@@ -1,4 +1,4 @@
-export function getDateFormatted(dateString) {
+export const getDateFormatted = (dateString) => {
   const currentDate = new Date(dateString);
 
   let month = currentDate.getMonth() + 1;
@@ -14,4 +14,4 @@ export function getDateFormatted(dateString) {
   }
 
   return `${day}/${month}/${year}`;
-}
+};

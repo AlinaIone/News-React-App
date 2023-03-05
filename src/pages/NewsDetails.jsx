@@ -26,7 +26,7 @@ export const NewsDetails = () => {
 
   const singularNewsUrl = getIndividualNewsEndpoint(newsIdTemporarly);
   const adaptedData = adaptIndiviualNewsData(useAxios(singularNewsUrl));
-  const { id, title, description, image, author, date, content, thumbnail, } = adaptedData;
+  const { id, title, description, image, author, date, content } = adaptedData;
   const formattedDate = getDateFormatted(date);
 
 

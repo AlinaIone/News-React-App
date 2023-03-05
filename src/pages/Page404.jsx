@@ -10,7 +10,7 @@ export const Page404 = () => {
       className={`${styles.page404} bg-primary text-white d-flex flex-column justify-content-center align-items-center`}
     >
       <Container className="d-flex flex-column justify-content-center align-items-center">
-        <p className="h4 text-center">Wooops! The cat ate your news! </p>
+        <p className="h4 text-center">Wooops! Garfield ate your news! </p>
         <strong className={`${styles.error404} py-5 h1 text-center text-secondary`}>
           404 Page Not Found
         </strong>

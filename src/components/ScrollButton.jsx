@@ -21,7 +21,6 @@ export const ScrollButton = () => {
 
     return (
         <>
-            {/* <div>{ArrowUpwardIcon}</div> */}
             {isScrollVisible && (
                 <div
                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
