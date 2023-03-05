@@ -10,10 +10,10 @@ export const NewsCard = (props) => {
     <Card className={`${styles.cardContainer} h-100 d-flex flex-column justify-content-between align-items-center`}>
       <Link to={`/news/${id}`}>
         <Card.Img variant="top" src={thumbnail} />
-        <Card.Body className="px-2">
+        <Card.Body className="px-1 py-3">
           <Card.Title>{title}</Card.Title>
         </Card.Body >
-        <Card.Body className="px-1">
+        <Card.Body className="pt-0 pb-1 px-1">
           <Card.Text>{description}</Card.Text>
         </Card.Body>
       </Link>

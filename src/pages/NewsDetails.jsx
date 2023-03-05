@@ -11,10 +11,12 @@ import styles from "./NewsDetails.module.css";
 import { FavoritesButton } from "../components/FavoritesButton";
 import { AlertContext } from "../store/Alert/alertContext";
 import Alert from 'react-bootstrap/Alert';
+import { FavoriteAlert } from "../components/FavoriteAlert";
 
 export const NewsDetails = () => {
-  // const { newsId } = useParams();
-  const { stateAlert, } = useContext(AlertContext);
+  // alert state required to display the alert or not
+  const { stateAlert } = useContext(AlertContext);
+
   const params = useParams();
 
   // a temporary way to get the news id until I will find an escape character who can read an entire id  ex:'music/2023/jan/28/john-wilson-sinfonia-of-london-vaughan-williams-howells-delius-elgar-review-eliane-radigue-occam-delta-xv-quatuor-bozzini'
@@ -32,9 +34,7 @@ export const NewsDetails = () => {
     <Layout>
       <Container className={`${styles.newsDetailsContainer} my-5 `}>
         <Row className="d-flex justify-content-center align-item-center">
-          {stateAlert.isActive && <Alert key={alert} variant='success' className={styles.alert}>
-            News added to Favorites
-          </Alert>}
+          {stateAlert.isActive && <FavoriteAlert />}
           <Col xs={12} lg={8} key={id}>
             <h1 className="pt-3 mb-5">{title}</h1>
             <p className="fw-bold">{description}</p>

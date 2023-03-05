@@ -3,5 +3,9 @@
 }
 
 .error404 {
-  font-size: 5rem;
+  font-style: italic;
+}
+
+.page404 img {
+  width: 23rem;
 }

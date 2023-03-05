@@ -20,7 +20,7 @@ export const Header = () => {
         setIsShowed(false);
       }
     };
-    handleResize();
+
     window.addEventListener("resize", handleResize);
     console.log("We are executing Resize useEffect");
     return () => window.removeEventListener("resize", handleResize);

@@ -3,22 +3,28 @@ import { useNavigate } from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
 import styles from "./Pagination.module.css";
 
-
 export const NewsPagination = (props) => {
-  const { category, pageNumber, total } = props;
+  const { pageNumber } = props;
   const navigate = useNavigate();
-  // console.log(navigate);
 
   let items = [];
   let totalPages = 6;
-  let midpoint = totalPages / 2;
 
   pageNumber > 1 &&
     items.push(
-      <Pagination.First key="first" onClick={() => navigate(`?page=1`)} />,
+      <Pagination.First
+        key="first"
+        onClick={() => {
+          navigate(`?page=1`);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      />,
       <Pagination.Prev
         key="prev"
-        onClick={() => navigate(`?page=${pageNumber - 1}`)}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          navigate(`?page=${pageNumber - 1}`);
+        }}
       />
     );
 
@@ -42,11 +48,17 @@ export const NewsPagination = (props) => {
     items.push(
       <Pagination.Next
         key="next"
-        onClick={() => navigate(`?page=${Number(pageNumber) + 1}`)}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          navigate(`?page=${Number(pageNumber) + 1}`);
+        }}
       />,
       <Pagination.Last
         key="last"
-        onClick={() => navigate(`?page=${totalPages}`)}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          navigate(`?page=${totalPages}`)
+        }}
       />
     );
 

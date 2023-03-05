@@ -8,8 +8,7 @@ import { NewsCardList } from "../components/NewsCardList";
 import { adaptNewsData } from "../api/adapters";
 import { NewsPagination } from "../components/Pagination";
 import { AlertContext } from "../store/Alert/alertContext";
-import styles from './NewsCategory.module.css'
-import Alert from 'react-bootstrap/Alert';
+import { FavoriteAlert } from "../components/FavoriteAlert";
 
 // review from here
 export const NewsCategory = () => {
@@ -30,10 +29,8 @@ export const NewsCategory = () => {
   return (
     <Layout>
       <Container>
-        <h2 className="my-4">{categoryType.charAt(0).toUpperCase() + categoryType.slice(1)}</h2>
-        {stateAlert.isActive && <Alert key={alert} variant='success' className={styles.alert}>
-          News added to Favorites
-        </Alert>}
+        <h2 className="mt-5 pt-2 mb-4">{categoryType.charAt(0).toUpperCase() + categoryType.slice(1)}</h2>
+        {stateAlert.isActive && <FavoriteAlert />}
         <NewsCardList newsList={newsList} />
         <NewsPagination category={categoryType} pageNumber={pageNumber} />
       </Container>
