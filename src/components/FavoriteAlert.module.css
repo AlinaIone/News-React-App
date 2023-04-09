@@ -1,0 +1,25 @@
+.alert {
+  background-color: var(--bg-light) !important;
+  opacity: 0.9;
+  color: var(--text-primary) !important;
+  font-size: 1rem;
+  padding: 0.7rem !important;
+  position: fixed !important;
+  top: 14%;
+  left: 25%;
+  width: 50%;
+  text-align: center;
+  border: none !important;
+  box-shadow: rgba(16, 137, 161, 0.642) 0px 13px 27px -5px,
+    rgba(255, 255, 255, 0.709) 0px 8px 16px -8px;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .alert {
+    top: 12%;
+    left: 15%;
+    width: 70%;
+    padding: 0.5rem !important;
+  }
+}

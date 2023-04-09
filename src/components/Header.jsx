@@ -1,37 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/esm/Container";
-import { Link, NavLink } from "react-router-dom";
-import { Home } from "../pages/Home";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
+import logo from "../logo/News-Logo.png";
+import MenuIcon from '@mui/icons-material/Menu';
 
 export const Header = () => {
   const [isShowed, setIsShowed] = useState(false);
 
-  let dropdownMenuClasses = styles.dropdownMenu;
+  let dropdownMenuClasses = isShowed
+    ? styles.displayMobileMenu
+    : styles.dropdownMenu;
 
-  if (isShowed) {
-    dropdownMenuClasses += `${styles.displayMobileMenu}`;
-  }
+
+  // If the max-width is grater than 768 the state of the isShowed is set to false
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsShowed(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    console.log("We are executing Resize useEffect");
+    return () => window.removeEventListener("resize", handleResize);
+  }, [window.innerWidth]);
 
   return (
-    <header>
+    <header className={styles.header}>
       <nav className={`${styles.nav} w-100`}>
         <Container className="d-flex justify-content-between align-items-center">
-          <NavLink to="/" className="p-3">
-            <img
-              src="https://itschool.ro/images/logo-itschool-dark.svg"
-              alt="itschool logo"
-            />
+          <NavLink to="/" className="p-3 py-0">
+            <img src={logo} alt="news logo" />
           </NavLink>
           <div className={styles.menuIconContainer}>
             <span
               className={`material-icons ${styles.menuIcon} text-light`}
               onClick={() => setIsShowed((prevValue) => !prevValue)}
             >
-              menu
+              <MenuIcon sx={{ fontSize: 30 }} />
             </span>
-            <ul className={dropdownMenuClasses}>
-              <li className={isShowed ? "container" : null}>
+
+            {isShowed && (
+              <div
+                className={styles.overlay}
+                onClick={() => setIsShowed(false)}
+              ></div>
+            )}
+
+            <ul
+              className={dropdownMenuClasses}
+              onClick={() => setIsShowed(false)}
+            >
+              <li className={isShowed ? "container" : ""}>
                 <NavLink
                   to="/category/technology"
                   className="p-3 text-uppercase text-light"
@@ -40,7 +61,7 @@ export const Header = () => {
                 </NavLink>
               </li>
 
-              <li className={isShowed ? "container" : null}>
+              <li className={isShowed ? "container" : ""}>
                 <NavLink
                   to="/category/music"
                   className="p-3 text-uppercase text-light"
@@ -49,7 +70,7 @@ export const Header = () => {
                 </NavLink>
               </li>
 
-              <li className={isShowed ? "container" : null}>
+              <li className={isShowed ? "container" : ""}>
                 <NavLink
                   to="/category/science"
                   className="p-3 text-uppercase text-light"
@@ -58,7 +79,7 @@ export const Header = () => {
                 </NavLink>
               </li>
 
-              <li className={isShowed ? "container" : null}>
+              <li className={isShowed ? "container" : ""}>
                 <NavLink
                   to="/favorites"
                   className="p-3 text-uppercase text-light"

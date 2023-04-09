@@ -1,14 +1,16 @@
 /* Global variables */
-
 :root {
-  --text-primary: #231042;
-  --text-secondary: #4cfbfb;
-  --text-dark: #25222b;
-  --text-light: #eaeaea;
+  --text-primary: #3a506b;
+  --text-secondary: #5bc0be;
+  --text-dark: #1c2541;
+  --text-light: #6fffe9;
+  --text-verydark: #0b132b;
 
-  --bg-primary: #25144c;
-  --bg-secondary: #dff5ee;
-  --bg-dark: #191042;
+  --bg-primary: #3a506b;
+  --bg-secondary: #5bc0be;
+  --bg-light: #6fffe9;
+  --bg-dark: #1c2541;
+  --bg-verydark: #0b132b;
 }
 
 /* Restart default properties */
@@ -18,7 +20,7 @@
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
 }
 
 ul {
@@ -33,42 +35,41 @@ a {
 }
 
 /* Bootstrap Customization */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  background-color: #2bb686;
-  border-color: #2bb686;
+.btn-secondary {
+  background-color: var(--bg-secondary) !important;
 }
+
 .text-primary {
-  color: #231042 !important;
+  color: var(--text-primary) !important;
 }
 
 .text-secondary {
-  color: #4cfbfb !important;
+  color: var(--text-secondary) !important;
 }
 
 .text-light {
-  color: #eaeaea !important;
+  color: var(--text-light) !important;
 }
 
 .text-dark {
-  color: #25222b !important;
+  color: var(--text-dark) !important;
 }
 
 .bg-primary {
-  background-color: #25144c !important;
+  background-color: var(--bg-primary) !important;
 }
 
 .bg-secondary {
-  background-color: #dff5ee !important;
+  background-color: var(--bg-secondary) !important;
 }
 
 .bg-dark {
-  background-color: #191042 !important;
+  background-color: var(--bg-dark) !important;
 }
 
 h1,
 h2,
 h3 {
   font-weight: bold;
+  color: var(--bg-dark) !important;
 }

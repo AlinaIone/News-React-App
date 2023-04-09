@@ -1,0 +1,19 @@
+.scrollBtn {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--bg-verydark);
+  border-radius: 50%;
+  color: var(--bg-light);
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 2%;
+  bottom: 8%;
+  z-index: 6;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  font-weight: 700;
+}

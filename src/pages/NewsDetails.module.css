@@ -1,0 +1,28 @@
+.newsDetailsContainer {
+  text-align: justify;
+}
+
+.newsDetailsContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.newsDetailsContainer a {
+  display: inline;
+  color: var(--bg-secondary) !important;
+}
+
+.newsDetailsContainer a:hover {
+  color: rgb(43, 226, 220);
+  text-decoration: underline;
+}
+
+.newsDetailsContainer h2,
+.newsDetailsContainer h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.newsDetailsContainer figcaption {
+  font-size: 0.875rem;
+}

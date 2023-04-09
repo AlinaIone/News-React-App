@@ -1,0 +1,11 @@
+.cardContainer {
+  position: relative;
+}
+
+.cardContainer:hover {
+  box-shadow: var(--bg-light) 0px 7px 29px 0px;
+}
+
+a {
+  color: var(--text-primary) !important;
+}

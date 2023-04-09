@@ -1,26 +1,24 @@
 import React from "react";
-
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { FavoritesButton } from "./FavoritesButton";
+import styles from './NewsCard.module.css';
 
+// Comp responsable for showing a newsCard with the summary of the news
 export const NewsCard = (props) => {
-  const { id, imageSrc, title, content } = props;
-
-  console.log(id);
-
+  const { id, thumbnail, title, description } = props;
   return (
-    <div>
+    <Card className={`${styles.cardContainer} h-100 d-flex flex-column justify-content-between align-items-center`}>
       <Link to={`/news/${id}`}>
-        <Card style={{ height: "100%" }}>
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-          </Card.Body>
-          <Card.Img variant="top" src={imageSrc} />
-          <Card.Body>
-            <Card.Text>{content}</Card.Text>
-          </Card.Body>
-        </Card>
+        <Card.Img variant="top" src={thumbnail} />
+        <Card.Body className="px-1 py-3">
+          <Card.Title>{title}</Card.Title>
+        </Card.Body >
+        <Card.Body className="pt-0 pb-1 px-1">
+          <Card.Text>{description}</Card.Text>
+        </Card.Body>
       </Link>
-    </div>
+      <FavoritesButton newsDataToDispatch={props} />
+    </Card>
   );
 };

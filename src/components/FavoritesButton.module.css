@@ -1,0 +1,29 @@
+.buttons {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.btn-addFav {
+  background-color: var(--bg-primary) !important;
+  border: 0px !important;
+  padding: 0.3rem 0.3rem !important;
+}
+
+.btn-addFav:hover svg {
+  font-size: 2.3rem;
+}
+
+.btn-removeFav {
+  background-color: var(--bg-primary) !important;
+  border: 0px !important;
+  padding: 0.3rem 0.3rem !important;
+}
+.btn-removeFav svg {
+  color: yellow;
+}
+
+.btn-removeFav:hover svg {
+  color: white;
+  font-size: 2.3rem;
+}

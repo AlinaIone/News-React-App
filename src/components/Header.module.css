@@ -1,13 +1,15 @@
-.nav {
+.header {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1;
+  display: block;
   background-color: var(--bg-primary);
 }
 
 .nav img {
+  max-width: 6rem;
   width: auto;
-  height: 3.75rem;
+  height: auto;
 }
 
 .menuIcon {
@@ -20,18 +22,21 @@
 }
 
 .nav a:hover {
-  color: lightgreen;
+  color: var(--text-secondary) !important;
 }
-
 @media (max-width: 768px) {
   .nav img {
-    height: 2.8rem;
+    height: 5rem;
+  }
+  .nav li a {
+    display: block;
+    padding-left: 2rem !important;
   }
 
   .dropdownMenu {
     display: none;
   }
-  /* Hamburger menu */
+  /* Hamburger icon */
   .menuIcon {
     display: block;
   }
@@ -39,15 +44,23 @@
   .menuIconContainer {
     position: relative;
   }
-
+  /* Mobile menu */
   .displayMobileMenu {
     display: block;
     width: 100%;
-
     position: fixed;
-    top: 4.8rem;
+    top: 4rem;
     left: 0;
+    background-color: var(--bg-primary);
+  }
 
-    background-color: lightcoral;
+  .overlay {
+    background-color: #3a506b87;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 18rem;
+    left: 0;
+    z-index: -1;
   }
 }
