@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FavoritesButton } from "./FavoritesButton";
 import styles from './NewsCard.module.css';
 
+// Comp responsable for showing a newsCard with the summary of the news
 export const NewsCard = (props) => {
   const { id, thumbnail, title, description } = props;
   return (

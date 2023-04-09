@@ -7,17 +7,17 @@ export const ScrollButton = () => {
     const [isScrollVisible, setIsScrollVisible] = useState(false);
 
     useEffect(() => {
-
         const handleScrollVisible = () => {
-            window.scrollY > 400 ? setIsScrollVisible(true) : setIsScrollVisible(false)
-        }
+            window.scrollY > 400
+                ? setIsScrollVisible(true)
+                : setIsScrollVisible(false);
+        };
 
-        window.addEventListener('scroll', handleScrollVisible);
-        console.log('Resize scroll ');
+        window.addEventListener("scroll", handleScrollVisible);
+        console.log("Resize scroll ");
 
-        return () => window.removeEventListener('scroll', handleScrollVisible)
-
-    }, [window.scrollY])
+        return () => window.removeEventListener("scroll", handleScrollVisible);
+    }, [window.scrollY]);
 
     return (
         <>

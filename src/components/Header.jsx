@@ -52,7 +52,7 @@ export const Header = () => {
               className={dropdownMenuClasses}
               onClick={() => setIsShowed(false)}
             >
-              <li className={isShowed ? "container" : null}>
+              <li className={isShowed ? "container" : ""}>
                 <NavLink
                   to="/category/technology"
                   className="p-3 text-uppercase text-light"
@@ -61,7 +61,7 @@ export const Header = () => {
                 </NavLink>
               </li>
 
-              <li className={isShowed ? "container" : null}>
+              <li className={isShowed ? "container" : ""}>
                 <NavLink
                   to="/category/music"
                   className="p-3 text-uppercase text-light"
@@ -70,7 +70,7 @@ export const Header = () => {
                 </NavLink>
               </li>
 
-              <li className={isShowed ? "container" : null}>
+              <li className={isShowed ? "container" : ""}>
                 <NavLink
                   to="/category/science"
                   className="p-3 text-uppercase text-light"
@@ -79,7 +79,7 @@ export const Header = () => {
                 </NavLink>
               </li>
 
-              <li className={isShowed ? "container" : null}>
+              <li className={isShowed ? "container" : ""}>
                 <NavLink
                   to="/favorites"
                   className="p-3 text-uppercase text-light"
