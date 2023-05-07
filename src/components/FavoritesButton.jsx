@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
 import { useContext, useEffect } from "react";
 import { FavoritesContext } from "../store/Favorites/context";
@@ -39,8 +39,7 @@ export const FavoritesButton = ({ newsDataToDispatch }) => {
         return () => {
             clearTimeout(timer);
         };
-    }, [stateAlert.isActive]);
-
+    }, [stateAlert.isActive, dispatchAlert])
     // Verify if the id is in the Favorites general state. If the ID exist we display a REMOVE BUTTON and if is not a ADD BUTTON
     let isFav = false;
     if (stateFavorites.favorites.find((news) => news.id === id)) {
