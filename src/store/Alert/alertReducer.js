@@ -9,6 +9,7 @@ export const alertReducer = (state, action) => {
                 isActive: action.payload
             }
         }
+        default: { return state }
     }
 
 
