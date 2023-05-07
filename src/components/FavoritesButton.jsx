@@ -20,7 +20,7 @@ const star = <FontAwesomeIcon icon={faStar} size="2x" />;
 export const FavoritesButton = ({ newsDataToDispatch }) => {
     const { stateFavorites, dispatchFavorites } = useContext(FavoritesContext);
     const { stateAlert, dispatchAlert } = useContext(AlertContext);
-    const [_, setNewsInLocalStorage] = useLocalStorage(
+    const [, setNewsInLocalStorage] = useLocalStorage(
         "favorites",
         stateFavorites
     );
