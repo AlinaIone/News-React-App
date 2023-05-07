@@ -10,7 +10,6 @@ import { getDateFormatted } from "../utils/date";
 import styles from "./NewsDetails.module.css";
 import { FavoritesButton } from "../components/FavoritesButton";
 import { AlertContext } from "../store/Alert/alertContext";
-import Alert from 'react-bootstrap/Alert';
 import { FavoriteAlert } from "../components/FavoriteAlert";
 
 export const NewsDetails = () => {
@@ -22,7 +21,6 @@ export const NewsDetails = () => {
   // a temporary way to get the news id until I will find an escape character who can read an entire id  ex:'music/2023/jan/28/john-wilson-sinfonia-of-london-vaughan-williams-howells-delius-elgar-review-eliane-radigue-occam-delta-xv-quatuor-bozzini'
   // using useParams hook I get only the first word from the id ex: music
   const newsIdTemporarly = `${params.id}/${params["*"]}`;
-  console.log(newsIdTemporarly);
 
   const singularNewsUrl = getIndividualNewsEndpoint(newsIdTemporarly);
   const adaptedData = adaptIndiviualNewsData(useAxios(singularNewsUrl));

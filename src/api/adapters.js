@@ -34,7 +34,5 @@ export const adaptIndiviualNewsData = (apiData) => {
     thumbnail: adaptedResponse.fields.thumbnail,
   };
 
-  console.log(adaptedDetailsNews);
-
   return adaptedDetailsNews;
 };

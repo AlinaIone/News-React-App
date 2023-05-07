@@ -14,10 +14,9 @@ export const ScrollButton = () => {
         };
 
         window.addEventListener("scroll", handleScrollVisible);
-        console.log("Resize scroll ");
 
         return () => window.removeEventListener("scroll", handleScrollVisible);
-    }, [window.scrollY]);
+    }, []);
 
     return (
         <>
