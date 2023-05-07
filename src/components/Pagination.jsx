@@ -32,7 +32,7 @@ export const NewsPagination = (props) => {
     items.push(
       <Pagination.Item
         key={page}
-        active={pageNumber ? page == pageNumber : page == 1}
+        active={pageNumber ? page === +pageNumber : page === 1}
         id={pageNumber ? styles.paginationActive : null}
         onClick={() => {
           navigate(`?page=${page}`);

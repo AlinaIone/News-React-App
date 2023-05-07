@@ -8,7 +8,6 @@ export const favoritesReducer = (state, action) => {
     // if is do nothing and return state, else add the news to the state and return new state
     case "ADD_TO_FAV": {
       console.log("Add");
-      console.log({ state1: state });
       //
       return state.favorites
         .map((payload) => payload.id)

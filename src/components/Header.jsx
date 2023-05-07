@@ -22,9 +22,9 @@ export const Header = () => {
     };
 
     window.addEventListener("resize", handleResize);
-    console.log("We are executing Resize useEffect");
+
     return () => window.removeEventListener("resize", handleResize);
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <header className={styles.header}>
