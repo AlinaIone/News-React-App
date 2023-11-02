@@ -12,7 +12,7 @@ Visit the project [here](https://world-news-app.netlify.app/)
 * [Project Status](#project-status)
 
 ## Description
-
+in progress
 ## Technologies
 - React (18.2.0)
 - React Router (6.4.3)
