@@ -14,6 +14,14 @@ Visit the project [here](https://world-news-app.netlify.app/)
 ## Description
 
 ## Technologies
+- React (18.2.0)
+- React Router (6.4.3)
+- Axios (1.2.0)
+- Bootstrap (5.2.3)
+- React Bootstrap (2.6.0)
+- Font Awesome (6.2.1)
+- Material-UI (5.11.9)
+
 
 ## Instructions
 - Clone the repository to your local machine
