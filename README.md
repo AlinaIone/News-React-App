@@ -16,9 +16,9 @@ The project is designed to be a hands-on journey into the core functionalities o
 
 **Key Features**
 1. **Handy Navigation Menu:**
-  - Explore news from various topics on the home page.
-  - Easily select your favorite category for targeted news viewing.
-  - Handily navigate to your favorite articles at any time by going to the  "Favorites" section .
+    - Explore news from various topics on the home page.
+    - Easily select your favorite category for targeted news viewing.
+    - Handily navigate to your favorite articles at any time by going to the  "Favorites" section .
 2. **Detail Page:**
   - Click on a news article to access a detailed page for more in-depth information.
 3. **Effortless News Saving:**
