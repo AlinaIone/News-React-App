@@ -20,13 +20,13 @@ The project is designed to be a hands-on journey into the core functionalities o
     - Easily select your favorite category for targeted news viewing.
     - Handily navigate to your favorite articles at any time by going to the  "Favorites" section .
 2. **Detail Page:**
-  - Click on a news article to access a detailed page for more in-depth information.
+      - Click on a news article to access a detailed page for more in-depth information.
 3. **Effortless News Saving:**
-  - Save news articles by clicking on the star icon, available on every news item and the detailed page.
-  - Remove articles from your favorites with a simple click on the star if you change your mind.
+      - Save news articles by clicking on the star icon, available on every news item and the detailed page.
+      - Remove articles from your favorites with a simple click on the star if you change your mind.
 4. **Enhanced Navigation Features:**
-  - Utilize a scroll button for smooth navigation.
-  - Access pagination for viewing a larger number of news articles.
+      - Utilize a scroll button for smooth navigation.
+      - Access pagination for viewing a larger number of news articles.
 
 ## Technologies
 - React (18.2.0)
