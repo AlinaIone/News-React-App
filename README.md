@@ -15,6 +15,7 @@ Visit the project [here](https://world-news-app.netlify.app/)
 The project is designed to be a hands-on journey into the core functionalities of ReactJS, focusing on handling HTTP requests. But it's not just about that, it's also about mastering ReactJS by understanding how stateful/stateless components and a general store provided by react-router are game-changers in building effective applications.
 
 **Key Features**
+
 1. **Handy Navigation Menu:**
     - Explore news from various topics on the home page.
     - Easily select your favorite category for targeted news viewing.
@@ -64,7 +65,7 @@ npm start
 **Course: Web Development by [IT School](https://www.itschool.ro/cursuri/curs-web-development-online)**
 - **Trainer:** [Răzvan Cîrlugea](https://github.com/razvancir96)
 
-The project was the final assignment of the 'Web Development' course,  guided by Răzvan Cîrlugea. It represents the consolidation of the knowledge gained and skills honed during the program
+The project was based on the final assignment of the 'Web Development' course, guided by Răzvan Cîrlugea. It represents the consolidation of the knowledge gained and skills honed during the program and my my individual research.
 
 ## Project Status
 - Completed
