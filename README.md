@@ -12,7 +12,22 @@ Visit the project [here](https://world-news-app.netlify.app/)
 * [Project Status](#project-status)
 
 ## Description
-in progress
+The project is designed to be a hands-on journey into the core functionalities of ReactJS, focusing on handling HTTP requests. But it's not just about that, it's also about mastering ReactJS by understanding how stateful/stateless components and a general store provided by react-router are game-changers in building effective applications.
+
+**Key Features**
+1. **Handy Navigation Menu:**
+  - Explore news from various topics on the home page.
+  - Easily select your favorite category for targeted news viewing.
+  - Handily navigate to your favorite articles at any time by going to the  "Favorites" section .
+2. **Detail Page:**
+  - Click on a news article to access a detailed page for more in-depth information.
+3. **Effortless News Saving:**
+  - Save news articles by clicking on the star icon, available on every news item and the detailed page.
+  - Remove articles from your favorites with a simple click on the star if you change your mind.
+4. **Enhanced Navigation Features:**
+  - Utilize a scroll button for smooth navigation.
+  - Access pagination for viewing a larger number of news articles.
+
 ## Technologies
 - React (18.2.0)
 - React Router (6.4.3)
@@ -40,9 +55,8 @@ npm install
 ```bash
 npm start
 ```
--Access the Project
+- Access the Project
   - access the project in your web browser by navigating to the specified address (usually http://localhost:3000)
-  - 
 > [!NOTE]
 > You can access the website by visiting the [Project Link](#project-link)
 
